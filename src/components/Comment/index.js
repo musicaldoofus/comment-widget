@@ -1,7 +1,9 @@
 import React from 'react';
+import { Star } from '../RatingsContainer';
 import './Comment.css';
 
-const Comment = ({Author, timestamp, Body}) => {
+const Comment = ({Author, Rating, timestamp, Body}) => {
+  const stars = Array.from({length: 5}, (_, i) => <Star small key={i} isActive={Rating > i}/>);
   return (
     <div className="comment">
       <div className="comment-avatar">
@@ -13,7 +15,10 @@ const Comment = ({Author, timestamp, Body}) => {
           by: {Author}
         </div>
       </div>
-      <div className="comment=body">
+      <div className="comment-body">
+        <div className="comment-rating">
+          {stars}
+        </div>
         {Body}
       </div>
     </div>

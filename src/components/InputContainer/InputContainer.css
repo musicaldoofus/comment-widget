@@ -1,0 +1,7 @@
+/*InputContainer.css*/
+
+.comments-input-container {
+    margin: 1em;
+    border: 1px solid var(--gray);
+    padding: 1em;
+}
