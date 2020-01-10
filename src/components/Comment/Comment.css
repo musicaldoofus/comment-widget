@@ -1,0 +1,10 @@
+/*Comment.css*/
+
+.comment {
+    display: block;
+    max-width: 100%;
+    border-radius: 0.125em;
+    border: 1px solid var(--gray);
+    padding: 1em;
+    margin: 1em;
+}

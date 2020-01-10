@@ -1,26 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
+import { HashRouter, BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Root from './pages/Root';
+import Admin from './pages/Admin';
 import './App.css';
 
-function App() {
+const withHashRouter = () => (
+	<HashRouter>
+		<Routes/>
+	</HashRouter>
+);
+
+const withBrowserRouter = () => (
+	<Router>
+		<Routes/>
+	</Router>
+);
+
+const Routes = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Switch>
+      <Route
+        exact
+        path="/"
+        component={Root}
+      />
+      <Route
+        path="/admin"
+        component={Admin}
+      />
+    </Switch>
+  )
+}
+
+const App = () => {
+  const isGhPages = window.location.href.indexOf('github.io') > -1;
+  return isGhPages ? withHashRouter() : withBrowserRouter();
 }
 
 export default App;
