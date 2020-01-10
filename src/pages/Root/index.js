@@ -19,8 +19,8 @@ const Root = () => {
       setComments(comments.concat(c))/*.sort(byDate)*/
     }
   
-      return (
-          <div className="comments-container">
+    return (
+      <div className="comments-container">
         <InputContainer onSubmit={handleSubmit}/>
         <div className="comments-list-container">
           {comments ?

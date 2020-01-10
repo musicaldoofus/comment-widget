@@ -55,4 +55,4 @@ const InputContainer = ({/*author,*/ onSubmit}) => { //to extend: pass author pr
     );
   }
 
-  export default InputContainer
+  export default InputContainer;
