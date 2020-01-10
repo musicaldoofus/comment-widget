@@ -25,14 +25,4 @@ const Comment = ({Author, Rating, timestamp, Body}) => {
   )
 }
 
-const toCommentBox = (c) => {
-  return (
-    <Comment
-      key={c.CommentId}
-      {...c}
-    />
-  )
-}
-
 export default Comment;
-export { toCommentBox };

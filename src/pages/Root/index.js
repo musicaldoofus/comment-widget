@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Loading from '../../components/Loading';
 import InputContainer from '../../components/InputContainer';
-import { toCommentBox } from '../../components/Comment';
+import Comment from '../../components/Comment';
 import CONSTANTS from '../../helpers/constants';
 import './Root.css';
 
@@ -24,7 +24,7 @@ const Root = () => {
         <InputContainer onSubmit={handleSubmit}/>
         <div className="comments-list-container">
           {comments ?
-            comments.map(toCommentBox)
+            comments.map(c => <Comment key={c.id} {...c}/>)
             : <Loading/>
           }
         </div>
